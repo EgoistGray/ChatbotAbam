@@ -10,8 +10,8 @@ let bot = new chatbot();
 
 // create LINE SDK config from env variables
 const config = {
-    channelAccessToken: "Lzt8NjJ6tjr9wHnkaI6J3CVo9YOH+Dgjtpdf0aOcdz2p7SPvdkWVKRmwrHtE4h122F26VQ0QCNeHC5VpaE+YRyB2wrJ44Scy7Gw4XCnQLegksp5O7Wn770IsuGwuu0jlFgx1xwgRfly2w1BLRuu1DwdB04t89/1O/w1cDnyilFU=",
-    channelSecret: "bb3bea559d5ffdb9b31c36b5c30d7044"
+    channelAccessToken: "I1PVJRhv+bRjNe/3ZDmfnyQMsZbiwwEI6Ivz7RLI4h07JMOvx11UomfGzTV8H5aGOdJq+FKn+Qv3yJC7x7i2YYQ8toHkWNOGpMMauwcgbL83q6N9fFRwkpo2JWatE1RcEpXrMktJPkoTHgiA1MCf1gdB04t89/1O/w1cDnyilFU=",
+    channelSecret: "4a1aabec3f52e7a60ba170a6d5d4182d"
 }
 
 // create LINE SDK client
