@@ -3,7 +3,7 @@
 // Import all libraries
 const line = require('@line/bot-sdk');
 const express = require('express');
-const chatbot = require('./lib/bot');
+const chatbot = require('./lib/bot.js');
 const path = require('path');
 
 // Construct Chatbot Instances
@@ -40,7 +40,6 @@ app.get('/getDatabase', (req, res) => {
   res.setHeader('Content-type', 'application/json');
   return;
 });
-
 app.get('/database', (req, res) => {
   res.send(bot.currentDatabase);
   return 200;
@@ -53,15 +52,26 @@ app.post('/updateDatabase', (req, res) => {
   // Otherwise update the database
   console.log(req.body);
   bot._updateDatabase(req.body);
- 
+  
   return 200;
 });
-
+app.post('/broadcast', (req, res) => {
+  bot.broadcastSchedule();
+  res.sendStatus(200);
+  return 200;
+});
 
 app.use('/', express.static('manager'));
 
 // event handler
 function handleEvent(event) {
+  bot.setGlobal(client,event);
+  if(event.type === 'follow'){
+    bot.subscribe(event.source.userId, client);
+  }
+  if(event.type === 'unfollow'){
+    bot.unsubscribe(event.source.userId, client);
+  }
 
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event

@@ -13,6 +13,7 @@ class Main{
         this.textbox = document.querySelector('input#addEvent');
         this.calendar = document.querySelector('input#date');
         this.button = document.querySelector('input#add');
+        this.broadcastBtn = document.querySelector('input#broadcast');
 
         this.calendar.min = Date.now()
     }
@@ -28,6 +29,16 @@ class Main{
         b = undefined;
 
         this._renderDatabaseToHTML();
+
+        this.broadcastBtn.addEventListener('click', _ => {
+            _.stopPropagation();
+            _.stopImmediatePropagation();
+            console.log(this.database);
+            fetch('/broadcast', {
+                method : "POST"
+            });
+            alert('Broadcasted');
+        })
 
         this.button.addEventListener('click', _ => {
             if(this.calendar.value === '' || this.textbox.value === '') {
@@ -115,10 +126,13 @@ class Main{
             }
         });
         this._updateDatabaseToServer();
-
         if(Object.keys(this.database).length === 0){
+            console.log(111);
+            this.broadcastBtn.className = 'hideBroadcast';
             this.scheduleInterface.innerHTML = "";
             return;
+        } else {
+            this.broadcastBtn.className = '';
         }
         // Clear first (lazy)
         this.scheduleInterface.innerHTML = "";
