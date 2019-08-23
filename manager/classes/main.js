@@ -130,6 +130,10 @@ class Main{
             this.scheduleInterface.appendChild(component);
         });
 
+        // Reset textboxes
+        this.textbox.value = "";
+        this.calendar.value = "";
+
         // Set all event listeners
         document.querySelectorAll('input[type="Button"]').forEach( item => {
             item.addEventListener('click', _ => {
