@@ -1,0 +1,154 @@
+/*
+*
+*   Hi there!
+*
+*   Thanks for looking into my code, Mind to give me feedback?
+*   Contact me here:
+*
+*	   "nano.osamu@gmail.com"
+*
+*/
+html, body{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div#container, div#title, div#control, div#schedule{
+    width:100vw;
+}
+div#title, div#control, div#schedule{
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+div#schedule{
+    flex-direction: column;
+    justify-content: flex-start;
+}
+div.dateBox:nth-last-child(){
+    margin-bottom: 20px;
+}
+
+margin-bottom: 20px;
+    /* Container */
+div#container{
+    height: 100vh;
+}
+
+/* Title*/
+div#title{
+    padding-top:70px;
+    align-items: center;
+    color:rgba(0,0,0,0.7);
+    height: 15vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Calibri';
+    font-size: 3.5em;
+}
+
+/* Control part */
+div#control{
+    align-items: center;
+    height: 15vh;
+}
+div#control > input#date{
+    width: 11em;
+    padding: 2px 5px;
+    
+}
+div#control > input#addEvent{
+    width: 20em;
+    padding: 3px 5px;
+}
+
+div#control > input#add{
+    width: 10ex;
+    padding: 2px 4px;
+    color:white;
+    background: rgb(0,120,255);
+    border: 1px solid rgb(0,120,255);   
+}
+div#control > input#add:hover{
+    cursor: pointer;
+}
+div#control > input#add:focus{
+    outline: none;
+}
+div#control > input#add:active{
+    background: rgb(0, 101, 168);
+    border: 1px solid rgb(0, 101, 168);   
+    cursor: pointer;
+}
+
+input#addEvent, input#date, input#add{
+    height: 3.5em;
+    max-height: 3.5em;
+    
+}
+input#addEvent:focus, input#date{
+    outline: none;
+}
+
+/* Displayer */
+div#schedule{
+    /* height: 70vh; */
+    margin-bottom:30px;
+}
+
+div.deadline{
+    font-size: 2em;
+    margin-right: 10em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(0,0,0,.7)
+}
+
+div.dateBox{
+    display: inline;
+    text-align: center;
+    margin: 10px 0px;
+}
+div.dateBox:nth-last-child(){
+    margin-bottom: 50px;
+}
+
+/* Task Item */
+div.taskBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.task{
+    margin: 10px 0px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 35em;
+    background: rgb(0,120,255);
+    padding: 8px 10px;
+    display: flex;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.task > input[type="button"]{
+    display: flex;
+    align-self: flex-end;
+    color:white;
+    background: rgb(0,120,255);
+    border: 1px solid rgb(0,120,255);
+    height: 2em;
+}
+
+div.task > input[type="button"]:focus{
+    outline: none;
+}
+
+div.task > input[type="button"]:hover{
+    cursor: pointer;
+}
+
