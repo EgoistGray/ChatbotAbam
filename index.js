@@ -4,6 +4,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const chatbot = require('./lib/bot.js');
+const key = require('./lib/lineKey.js');
 const path = require('path');
 
 // Construct Chatbot Instances
@@ -11,8 +12,8 @@ let bot = new chatbot();
 
 // create LINE SDK config from env variables
 const config = {
-    channelAccessToken: "K+5PMPxPkc7INt36t/7U8S82OCpjpWM60GTZ+Ksy2b06KEzf4d+09z6bzOWtU1oxOdJq+FKn+Qv3yJC7x7i2YYQ8toHkWNOGpMMauwcgbL9+uWovVCymd0OAdjDD2ZAU0mT5KpRB4QvYynzUXmumyAdB04t89/1O/w1cDnyilFU=",
-    channelSecret: "4a1aabec3f52e7a60ba170a6d5d4182d"
+    channelAccessToken: key.getChannelAccessToken(),
+    channelSecret: key.getChannelSecret()
 }
 
 // create LINE SDK client
@@ -50,8 +51,8 @@ app.post('/updateDatabase', (req, res) => {
   // If there is no task send
   if(Object.keys(req.body) === 0) return;
   // Otherwise update the database
-  console.log(req.body);
   bot._updateDatabase(req.body);
+  res.sendStatus(200);
   
   return 200;
 });

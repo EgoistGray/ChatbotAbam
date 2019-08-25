@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agenda 12 MIPA 1</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="preload" href="./classes/main.js" as="script">
+    <link rel="preload" href="./main.css" as="style">
 </head>
+
 <body>
     <div id="container">
         <div id="title">Agenda</div>
         <div id="control">
-            <select name="" id="">
-                <option value="Test">Matematika Minat</option>
-                <option value="Test">Fisika</option>
+            <!-- <div class="custom-select"> -->
+            <select name="Stuff" id="subject" class="custom-select">
+                <option value="Event">Event</option>
+                <option value="Mat Minat">Mat Minat</option>
+                <option value="Mat Wajib">Mat Wajib</option>
+                <option value="Inggris Minat">Inggris Minat</option>
+                <option value="Inggris Wajib">Inggris Minat</option>
+                <option value="B. Indonesia">B. Indonesia</option>
+                <option value="Kimia">Kimia</option>
+                <option value="Biologi">Biologi</option>
+                <option value="PPKN">PPKN</option>
+                <option value="PJOK">PJOK</option>
+                <option value="Sejarah">Sejarah</option>
+                <option value="Prakarya">Prakarya</option>
+                <option value="Native">Native</option>
             </select>
+            <!-- </div>    -->
             <input type="text" placeholder="Enter Event" id="addEvent">
             <input type="date" id="date">
             <input type="button" value="Add" id="add">
@@ -23,9 +40,10 @@
             
         </div>
         <div id="broadcastControl">
-            <input type="button" value="Broadcast" id="broadcast">
+            <input type="button" value="Broadcast" id="broadcast" class="hideBroadcast">
         </div>
     </div>
     <script type="text/javascript" src="./classes/main.js"> </script>
 </body>
+
 </html>
