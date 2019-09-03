@@ -27,6 +27,7 @@ div#title, div#control, div#schedule{
     white-space: nowrap;
 }
 
+
 div#schedule{
     flex-direction: column;
     justify-content: flex-start;
@@ -52,9 +53,36 @@ div#title{
 }
 
 /* Control part */
+/* New UI improvement */
+textarea{
+    resize: none;
+    position: relative;
+    transform: translateY(-25px);
+    padding: 2px 3px;
+    color: rgba(0,0,0,0.9);
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: none; */
+    padding: 10px 20px;
+    width: 365px;
+    height:100px;
+    z-index: 2;
+    font-size: 1.3em;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+div#control2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 div#control{
     align-items: center;
-    height: 15vh;
+    height: 12vh;
 }
 div#control > input#date{
     width: 11em;
@@ -265,3 +293,5 @@ div#broadcastControl{
       white-space: pre-line;
       padding-bottom: 20px;
   }
+
+

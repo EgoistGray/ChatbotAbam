@@ -10,7 +10,7 @@ class Main {
 
         // Elements
         this.scheduleInterface = document.querySelector('div#schedule');
-        this.textbox = document.querySelector('input#addEvent');
+        this.textbox = document.querySelector('textarea');
         this.calendar = document.querySelector('input#date');
         this.button = document.querySelector('input#add');
         this.broadcastController = document.querySelector('input#broadcast');
