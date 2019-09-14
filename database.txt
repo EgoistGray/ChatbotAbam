@@ -1,1 +1,1 @@
-{"Senin, 16 September 2019":{"Event":"Aduh tugas lagi!"}}
+{"Senin, 16 September 2019":{"Event":"Ada upacara bendera.\nJangan lupa bawa topi","Biologi":"PH 4 - Pembelahan Sel","Fisika":"Klasikal PH 2 - Listrik Statis\nTugas Penerapan Aplikasi Medan Magnetik. Tulis tangan di folio bergaris"}}
