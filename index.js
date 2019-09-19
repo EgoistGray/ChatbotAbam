@@ -5,11 +5,12 @@ const line = require('@line/bot-sdk');
 const express = require('express');
 const chatbot = require('./lib/bot.js');
 const key = require('./lib/lineKey.js');
+const Database = require('./lib/postgres-database.js');
 const path = require('path');
 
 // Construct Chatbot Instances
 let bot = new chatbot();
-
+let database = new Database();
 // create LINE SDK config from env variables
 const config = {
     channelAccessToken: key.getChannelAccessToken(),
