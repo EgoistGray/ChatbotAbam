@@ -37,9 +37,14 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
 });
 app.get('/getDatabase', (req, res) => {
-  res.sendFile(path.join(__dirname, './database.txt'));
-  res.setHeader('Content-type', 'application/json');
-  return;
+  console.log("ASKING FOR DATABASE");
+  database.selectLatestDatabase().then( (database) => {
+    console.log("DATABASE DONE!");
+    res.send(database);
+    res.end();
+    console.log('SENDING!');
+  }).catch(err => {console.log(err)});
+  return 200;
 });
 app.get('/database', (req, res) => {
   res.send(bot.currentDatabase);
@@ -48,12 +53,13 @@ app.get('/database', (req, res) => {
 
 app.use(require('body-parser').json());
 app.post('/updateDatabase', (req, res) => {
+  console.log(req.body);
   // If there is no task send
-  if(Object.keys(req.body) === 0) return;
+  if (Object.keys(req.body) === 0) return;
   // Otherwise update the database
-  bot._updateDatabase(req.body);
+  database.updateDatabase(req.body);
   res.sendStatus(200);
-  
+
   return 200;
 });
 app.post('/broadcast', (req, res) => {
